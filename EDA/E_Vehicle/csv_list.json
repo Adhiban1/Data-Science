@@ -1,0 +1,20 @@
+{
+    "csv_list": [
+        ".\\dataset\\Cheapest Electric Cars\\Cheapestelectriccars-EVDatabase.csv",
+        ".\\dataset\\Electric & Alternative Fuel Vehicles US [2022]\\Alternative Fuel Vehicles US.csv",
+        ".\\dataset\\Electric & Alternative Fuel Vehicles US [2022]\\Light Duty Vehicles.csv",
+        ".\\dataset\\Electric & Alternative Fuel Vehicles US [2022]\\Medium and Heavy Duty Vehicles.csv",
+        ".\\dataset\\Electric Vehicle Charging Stations\\ev_stations_v1.csv",
+        ".\\dataset\\Electric Vehicles\\evdataset.csv",
+        ".\\dataset\\Electric Vehicles - India\\EVIndia.csv",
+        ".\\dataset\\Electric Vehicles Registered in Washington State\\Electric_Vehicle_Population_Data.csv",
+        ".\\dataset\\Electric Vehicles User Reviews India\\2-wheeler-EV-bikewale.csv",
+        ".\\dataset\\Electric Vehicles User Reviews India\\4-wheeler-EV-cardekho.csv",
+        ".\\dataset\\Electric Vehicles User Reviews India\\4-wheeler-EV-carwale.csv",
+        ".\\dataset\\EVPopulation\\Electric_Vehicle_Population_Data (1).csv",
+        ".\\dataset\\EVPopulation\\Electric_Vehicle_Population_Data.csv",
+        ".\\dataset\\EVs - One Electric Vehicle Dataset - Smaller\\ElectricCarData_Clean.csv",
+        ".\\dataset\\EVs - One Electric Vehicle Dataset - Smaller\\ElectricCarData_Norm.csv",
+        ".\\dataset\\Quickest Electric Cars\\Quickestelectriccars-EVDatabase.csv"
+    ]
+}
