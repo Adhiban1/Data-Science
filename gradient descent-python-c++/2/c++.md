@@ -24,7 +24,7 @@ Matrix matSum(Matrix a, Matrix b)
     return a;
 }
 ```
-Matrix substraction function
+Matrix Subtraction function
 ```c++
 Matrix matSub(Matrix a, Matrix b)
 {
