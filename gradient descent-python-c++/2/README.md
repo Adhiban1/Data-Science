@@ -117,6 +117,7 @@ Matrix(int a, int b)
 Input parameters:
 - a - Rows
 - b - Columns
+
 `Matrix A(10,5)` - creates matrix of shape (10,5)
 #### operator+
 ```c++
