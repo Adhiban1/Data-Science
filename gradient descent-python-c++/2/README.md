@@ -69,7 +69,7 @@ plt.close()
 ```
 **Graph:**
 
-<img src="./loss.png">
+<img src="https://github.com/Adhiban1/Data-Science/raw/main/gradient%20descent-python-c%2B%2B/2/loss.png">
 
 ---
 
