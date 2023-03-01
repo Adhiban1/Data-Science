@@ -69,7 +69,7 @@ plt.close()
 ```
 **Graph:**
 
-![loss](./loss.png)
+<img src="./loss.png">
 
 ---
 
