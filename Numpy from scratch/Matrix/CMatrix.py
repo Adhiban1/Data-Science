@@ -1,5 +1,5 @@
 import random
-from CMatrixLib import *
+from .CMatrixLib import *
 
 class CMatrix:
     def __init__(self, l):

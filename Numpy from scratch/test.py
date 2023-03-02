@@ -1,6 +1,5 @@
-from Matrix import Matrix
+from Matrix import Matrix, CMatrix
 from time import time
-from CMatrix import CMatrix
 
 start = time()
 for i in range(1000):
