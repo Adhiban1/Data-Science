@@ -9,6 +9,8 @@ Cython is a programming language, a superset of the Python programming language,
 ```python
 from Matrix import Matrix, CMatrix
 from time import time
+import numpy as np
+import pandas as pd
 
 start = time()
 for i in range(1000):
@@ -28,7 +30,18 @@ for i in range(1000):
     b = a.sum()
 cmatrix_time = time()-start
 
-print(f'cmatrix_time * {matrix_time/cmatrix_time} = matrix_time\nCMatrix is ~{matrix_time/cmatrix_time:.2f} times faster than Matrix')
+start = time()
+for i in range(1000):
+    a = np.array([[1,2,3],[4,5,6],[7,8,9]])
+    a = a.dot(a)
+    a = 10*a
+    a = a*a
+    b = a.sum()
+numpy_time = time()-start
+
+df = pd.DataFrame({'Name':['Matrix', 'CMatrix', 'Numpy'], 'Time Taken':[matrix_time, cmatrix_time, numpy_time]})
+df = df.sort_values('Time Taken')
+print(df)
 ```
 run test.py in terminal
 ```python
@@ -36,6 +49,9 @@ python test.py
 ```
 output:
 ```python
-cmatrix_time * 3.464074819947435 = matrix_time
-CMatrix is ~3.46 times faster than Matrix
+      Name  Time Taken
+0  CMatrix    0.006224
+1    Numpy    0.006896
+2   Matrix    0.017838
 ```
+**CMatrix is faster than or equal to Numpy.**
