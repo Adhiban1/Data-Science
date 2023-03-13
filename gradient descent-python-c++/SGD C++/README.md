@@ -16,7 +16,11 @@ Weight:
 
 $$
 W = \left(\begin{array}{cc}
-w_1\\w_2\\.\\.\\w_j
+w_1\\
+w_2\\
+.\\
+.\\
+w_j
 \end{array}\right)
 $$
 
@@ -28,7 +32,11 @@ Y:
 
 $$
 Y = \left(\begin{array}{cc}
-y_1\\y_2\\.\\.\\y_i
+y_1\\
+y_2\\
+.\\
+.\\
+y_i
 \end{array}\right)
 $$
 
@@ -47,7 +55,11 @@ a_{21} & a_{22} & ... & a_{2j}\\
 a_{i1} & a_{i2} & ... & a_{ij}\\
 \end{array}\right).
 \left(\begin{array}{cc}
-w_1\\w_2\\.\\.\\w_j
+w_1\\
+w_2\\
+.\\
+.\\
+w_j
 \end{array}\right)+b
 $$
 
@@ -55,7 +67,8 @@ $$
 Y\_pred = \left(\begin{array}{cc}
 a_{11}w_{1}+a_{12}w_2+...+a_{1j}w_j+b\\
 a_{21}w_{1}+a_{22}w_2+...+a_{2j}w_j+b\\
-.\\.\\
+.\\
+.\\
 a_{i1}w_{1}+a_{i2}w_2+...+a_{ij}w_j+b
 \end{array}\right)
 $$
