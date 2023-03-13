@@ -106,6 +106,13 @@ $$
 $$
 
 ## code
+```c++
+#include<iostream>
+#include<vector>
+#include<cmath>
+using namespace std;
+typedef vector<vector<double>> Matrix;
+```
 Y_pred
 ```c++
 vector<double> y_pred(Matrix a, vector<double> w, double b){
