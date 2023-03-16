@@ -1,10 +1,9 @@
+from flask import Flask, render_template, request
 import matplotlib.pyplot as plt
 import numpy as np
 import imageio
-from flask import Flask, render_template, request
 import json
 
-# Inputs
 app = Flask(__name__)
 
 @app.route('/', methods=['POST', 'GET'])
@@ -39,7 +38,10 @@ def home():
 
 
         def delta(A, W, Y, lr):
-            return -lr*np.array([(2*A[:, 0].reshape(-1, 1)*(Y - A@W)).mean(), (2*A[:, 1].reshape(-1, 1)*(Y - A@W)).mean(), (2*A[:, 2].reshape(-1, 1)*(Y - A@W)).mean(), (2*A[:, 3].reshape(-1, 1)*(Y - A@W)).mean()]).reshape(-1, 1)
+            return -lr*np.array([(2*A[:, 0].reshape(-1, 1)*(Y - A@W)).mean(), 
+                                 (2*A[:, 1].reshape(-1, 1)*(Y - A@W)).mean(), 
+                                 (2*A[:, 2].reshape(-1, 1)*(Y - A@W)).mean(), 
+                                 (2*A[:, 3].reshape(-1, 1)*(Y - A@W)).mean()]).reshape(-1, 1)
 
 
         def loss(A, W, Y):
