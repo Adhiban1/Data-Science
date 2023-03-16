@@ -18,13 +18,12 @@ Let us take 4 points $(x_1, y_1), (x_2, y_2), (x_3, y_3), (x_4, y_4)$. Substitut
 We can convert this equation into Matrix,
 
 $$
-\begin{align*} 
 \begin{bmatrix}
 y_1\\
 y_2\\
 y_3\\
 y_4
-\end{bmatrix} & = 
+\end{bmatrix}  = 
 \begin{bmatrix}
 x_1^3 & x_1^2 & x_1 & 1\\
 x_2^3 & x_2^2 & x_2 & 1\\
@@ -36,9 +35,11 @@ a\\
 b\\
 c\\
 d
-\end{bmatrix}\\\\
-Y & = A.W
-\end{align*}
+\end{bmatrix}\\
+$$
+
+$$
+Y = A.W
 $$
 
 ### Loss
@@ -49,14 +50,19 @@ $$loss = {1 \over N}\sum(Y-\hat{Y})^2$$
 ### Gradient
 
 $$
-\begin{align*} 
-{d(loss) \over dW} & = {d \over dW}\left[{1 \over N}\sum(Y-\hat{Y})^2\right]\\\\
+{d(loss) \over dW} = {d \over dW}\left[{1 \over N}\sum(Y-\hat{Y})^2\right]
+$$
 
-{d(loss) \over dW} & = {1 \over N}{d \over dW}\left[\sum(Y-\hat{Y})^2\right]\\\\
+$$
+{d(loss) \over dW} = {1 \over N}{d \over dW}\left[\sum(Y-\hat{Y})^2\right]
+$$
 
-{d(loss) \over dW} & = {1 \over N}{d \over dW}\left[\sum(Y-A.W)^2\right]\\\\
+$$
+{d(loss) \over dW} = {1 \over N}{d \over dW}\left[\sum(Y-A.W)^2\right]
+$$
 
-{d(loss) \over dW} & = {1 \over N}{d \over dW}\sum\left(
+$$
+{d(loss) \over dW} = {1 \over N}{d \over dW}\sum\left(
 \begin{bmatrix}
 y_1\\
 y_2\\
@@ -75,98 +81,92 @@ b\\
 c\\
 d
 \end{bmatrix}
-\right)^2\\\\
+\right)^2
+$$
 
-{d(loss) \over dW} & = {1 \over N}{d \over dW}\sum\left(
+$$
+{d(loss) \over dW} = {1 \over N}{d \over dW}\sum\left(
 \begin{bmatrix}
 y_1-ax_1^3-bx_1^2-cx_1-d\\
 y_2-ax_2^3-bx_2^2-cx_2-d\\
 y_3-ax_3^3-bx_3^2-cx_3-d\\
 y_4-ax_4^3-bx_4^2-cx_4-d
 \end{bmatrix}
-\right)^2\\\\
+\right)^2
+$$
 
-{d(loss) \over dW_n} & = {1 \over 4}{d \over dW_n}\left(
+$$
+{d(loss) \over dW_n} = {1 \over 4}{d \over dW_n}\left(
 \begin{matrix}
 [y_1-ax_1^3-bx_1^2-cx_1-d]^2\\
 +[y_2-ax_2^3-bx_2^2-cx_2-d]^2\\
 +[y_3-ax_3^3-bx_3^2-cx_3-d]^2\\
 +[y_4-ax_4^3-bx_4^2-cx_4-d]^2\\
 \end{matrix}\right)
-\\\\
-\end{align*}
 $$
 
 Let us take $W_n = a$
 
 $$
-\begin{align*} 
-
-{d(loss) \over d(a)} &= {1 \over 4}\left(
+{d(loss) \over d(a)} = {1 \over 4}\left(
 \begin{matrix}
 2[y_1-ax_1^3-bx_1^2-cx_1-d][-x_1^3]\\
 +2[y_2-ax_2^3-bx_2^2-cx_2-d][-x_2^3]\\
 +2[y_3-ax_3^3-bx_3^2-cx_3-d][-x_3^3]\\
 +2[y_4-ax_4^3-bx_4^2-cx_4-d][-x_4^3]\\
-\end{matrix}\right)\\
+\end{matrix}\right)
+$$
 
-{d(loss) \over d(a)} &= {1 \over 2}A_{col1}^T.(Y-\hat{Y})
-
-\end{align*}
+$$
+{d(loss) \over d(a)} = {1 \over 2}A_{col1}^T.(Y-\hat{Y})
 $$
 
 Let us take $W_n = b$
 
 $$
-\begin{align*}
-
-{d(loss) \over d(b)} &= {1 \over 4}\left(
+{d(loss) \over d(b)} = {1 \over 4}\left(
 \begin{matrix}
 2[y_1-ax_1^3-bx_1^2-cx_1-d][-x_1^2]\\
 +2[y_2-ax_2^3-bx_2^2-cx_2-d][-x_2^2]\\
 +2[y_3-ax_3^3-bx_3^2-cx_3-d][-x_3^2]\\
 +2[y_4-ax_4^3-bx_4^2-cx_4-d][-x_4^2]\\
-\end{matrix}\right)\\
+\end{matrix}\right)
+$$
 
-{d(loss) \over d(b)} &= {1 \over 2}A_{col2}^T.(Y-\hat{Y})
-
-\end{align*}
+$$
+{d(loss) \over d(b)} = {1 \over 2}A_{col2}^T.(Y-\hat{Y})
 $$
 
 Let us take $W_n = c$
 
 $$
-\begin{align*}
-
-{d(loss) \over d(c)} &= {1 \over 4}\left(
+{d(loss) \over d(c)} = {1 \over 4}\left(
 \begin{matrix}
 2[y_1-ax_1^3-bx_1^2-cx_1-d][-x_1]\\
 +2[y_2-ax_2^3-bx_2^2-cx_2-d][-x_2]\\
 +2[y_3-ax_3^3-bx_3^2-cx_3-d][-x_3]\\
 +2[y_4-ax_4^3-bx_4^2-cx_4-d][-x_4]\\
-\end{matrix}\right)\\
+\end{matrix}\right)
+$$
 
-{d(loss) \over d(c)} &= {1 \over 2}A_{col3}^T.(Y-\hat{Y})
-
-\end{align*}
+$$
+{d(loss) \over d(c)} = {1 \over 2}A_{col3}^T.(Y-\hat{Y})
 $$
 
 Let us take $W_n = d$
 
 $$
-\begin{align*}
-
-{d(loss) \over d(d)} &= {1 \over 4}\left(
+{d(loss) \over d(d)} = {1 \over 4}\left(
 \begin{matrix}
 2[y_1-ax_1^3-bx_1^2-cx_1-d][-1]\\
 +2[y_2-ax_2^3-bx_2^2-cx_2-d][-1]\\
 +2[y_3-ax_3^3-bx_3^2-cx_3-d][-1]\\
 +2[y_4-ax_4^3-bx_4^2-cx_4-d][-1]\\
-\end{matrix}\right)\\
+\end{matrix}\right)
+$$
 
-{d(loss) \over d(d)} &= {1 \over 2}A_{col4}^T.(Y-\hat{Y})
-
-\end{align*}
+$$
+{d(loss) \over d(d)} = {1 \over 2}A_{col4}^T.(Y-\hat{Y})
 $$
 
 Finally, We get ${W'}$
@@ -334,4 +334,5 @@ if __name__ == '__main__':
 }
 ```
 Output
+
 ![img](./flask/image.jpg)
