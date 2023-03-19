@@ -5,13 +5,25 @@
 - $Y$ - True output matrix $(y_{i1})$
 - $\hat{Y}$ - Predicted matrix $(\hat{y}_{i1})$
 
-$\displaystyle A = \begin{bmatrix}a_{11}&a_{12}&\dots&a_{1j}\\a_{21}&a_{22}&\dots&a_{2j}\\\vdots&\vdots&\ddots&\vdots\\a_{i1}&a_{i2}&\dots&a_{ij}\end{bmatrix} \Rightarrow A = a_{ij}$
+$$\displaystyle A = \begin{bmatrix}a_{11}&a_{12}&\dots&a_{1j} \\ 
+a_{21}&a_{22}&\dots&a_{2j}\\ 
+\vdots&\vdots&\ddots&\vdots \\ 
+a_{i1}&a_{i2}&\dots&a_{ij}\end{bmatrix} \Rightarrow A = a_{ij}$$
 
-$\displaystyle W = \begin{bmatrix}w_{11}\\w_{21}\\\vdots\\w_{j1}\end{bmatrix} \Rightarrow W = w_{j1}$
+$$\displaystyle W = \begin{bmatrix}w_{11}\\
+w_{21}\\
+\vdots\\
+w_{j1}\end{bmatrix} \Rightarrow W = w_{j1}$$
 
-$\displaystyle Y = \begin{bmatrix}y_{11}\\y_{21}\\\vdots\\y_{i1}\end{bmatrix} \Rightarrow Y=y_{i1}$
+$$\displaystyle Y = \begin{bmatrix}y_{11}\\
+y_{21}\\
+\vdots\\
+y_{i1}\end{bmatrix} \Rightarrow Y=y_{i1}$$
 
-$\displaystyle \hat{Y} = \begin{bmatrix}\hat{y}_{11}\\\hat{y}_{21}\\\vdots\\\hat{y}_{i1}\end{bmatrix} \Rightarrow \hat{Y}=\hat{y}_{i1}$
+$$\displaystyle \hat{Y} = \begin{bmatrix}\hat{y}_{11}\\
+\hat{y}_{21}\\
+\vdots\\
+\hat{y}_{i1}\end{bmatrix} \Rightarrow \hat{Y}=\hat{y}_{i1}$$
 
 **Mean Square Error:**
 
@@ -82,7 +94,10 @@ array<array<double, 1>, 4> grad(
 }
 ```
 
-`result` $\displaystyle \hat{Y}=A.W \Rightarrow \hat{y}_{i1}=\sum_{n=1}^{j} a_{in}w_{n1}$
+`result` 
+
+$$\displaystyle \hat{Y}=A.W \Rightarrow \hat{y}_{i1}=\sum_{n=1}^{j} a_{in}w_{n1}$$
+
 ```c++
 array<array<double, 1>, 3> result(array<array<double, 4>, 3> A, array<array<double, 1>, 4> W){
     array<array<double, 1>, 3> y;
