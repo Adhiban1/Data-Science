@@ -40,6 +40,8 @@ $\displaystyle {d(loss) \over d(w_{j1})}={1 \over N_i}\sum_{m=1}^{i}\left[2\left
 $\displaystyle {d(loss) \over d(w_{j1})}=-{2 \over N_i}\sum_{m=1}^{i}\left[\left(a_{mj}\right)\left(y_{m1}-\sum_{n=1}^{j} a_{mn}w_{n1}\right)\right]$
 
 ## Code
+***I used C++, we can use Python also, but using this in Python is slow, for Python `Numpy` is the best***
+
 Matrices
 ```c++
 array<array<double, 4>, 3> A = {{{1,1,0,0},{0,0,0,0},{1,1,1,1}}};
