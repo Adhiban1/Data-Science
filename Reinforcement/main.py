@@ -22,11 +22,12 @@ pre = random_choice
 x = [a[0]]
 y = [a[1]]
 writer = imageio.get_writer('graph0.gif', fps=15)
-for s in track(range(100)):
+for s in track(range(1000)):
     while True:
         random_choice = random.choice(d)
-        if random_choice != [-i for i in pre] and \
-        -5 <= a[0]+random_choice[0] <= 5 and -5 <= a[1]+random_choice[1] <= 5:
+        # if random_choice != [-i for i in pre] and \
+        # -5 <= a[0]+random_choice[0] <= 5 and -5 <= a[1]+random_choice[1] <= 5:
+        if random_choice != [-i for i in pre]:
             pre = random_choice
             break
     
