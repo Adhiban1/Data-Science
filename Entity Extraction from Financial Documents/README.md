@@ -39,7 +39,7 @@ Accuracy with `OTHER`: 1.0
 
 100%|████████████████████████████████████████████████████████████████████████████████████████| 207/207 [00:01<00:00, 137.62it/s]
 
-Accuracy with `OTHER`: 1.0
+Accuracy without `OTHER`: 1.0
 
 Press enter to see sample data... 
 ```
