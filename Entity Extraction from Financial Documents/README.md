@@ -9,7 +9,7 @@ This will create a model that fitted with train dataset (dataset/train/boxes_tra
 
 **Output**
 ```
-Score: 0.934306876525545
+Score: 0.99
 ```
 
 ## Predict
@@ -33,15 +33,15 @@ python eval2.py
 **Output**
 
 ```
-100%|████████████████████████████████████████████████████████████████████████████████████████| 207/207 [00:01<00:00, 148.38it/s]
+100%|██████████████████████████████████████████████████████████████████████████████████| 207/207 [00:01<00:00, 103.51it/s]
 
-Accuracy with `OTHER`: 1.0
+Accuracy with `OTHER`: 0.9899141958838814
 
-100%|████████████████████████████████████████████████████████████████████████████████████████| 207/207 [00:01<00:00, 137.62it/s]
+100%|██████████████████████████████████████████████████████████████████████████████████| 207/207 [00:00<00:00, 239.58it/s]
 
-Accuracy without `OTHER`: 1.0
+Accuracy without `OTHER`: 0.9171185765543208
 
-Press enter to see sample data... 
+Press enter to see sample data...  
 ```
 
 This will printout that accuracy in both with 'OTHER' and without 'OTHER'
@@ -51,10 +51,11 @@ And it shows `Press enter to see sample data... `
 **Output**
 
 ```
-box17StateIncomeTax - box17StateIncomeTax
-box17StateIncomeTax - box17StateIncomeTax
-box17StateIncomeTax - box17StateIncomeTax
-OTHER - OTHER
+val - predict
+box1WagesTipsAndOtherCompensations - box1WagesTipsAndOtherCompensations
+box2FederalIncomeTaxWithheld - box2FederalIncomeTaxWithheld
+box1WagesTipsAndOtherCompensations - box1WagesTipsAndOtherCompensations
+box2FederalIncomeTaxWithheld - box2FederalIncomeTaxWithheld
 ...
 ...
 OTHER - OTHER
