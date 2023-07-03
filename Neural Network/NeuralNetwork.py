@@ -77,7 +77,8 @@ class NN:
                 B[b][bi] -= lr * gradient
         return W, B
 
-    def back_propagation(self, h, lr, epochs, activation=False):
+    def backpropagation(self, h, lr, epochs, activation=False):
+        self.activation = True
         loss_history = []
         loss_history.append(self.MSE(self.Y, self.forward(self.X, self.W, self.B, activation)))
         for _ in tqdm(range(epochs)):
@@ -87,3 +88,14 @@ class NN:
             f"\nInitial Loss: {loss_history[0]}\nFinal Loss: {loss_history[-1]}\nMin Loss: {min(loss_history)}\n"
         )
         return loss_history
+
+    def predict(self, X):
+        for i in range(len(self.W)):
+            if self.activation:
+                if i == len(self.W) - 1:
+                    X = self.sigmoid(X @ self.W[i] + self.B[i])
+                else:
+                    X = self.relu(X @ self.W[i] + self.B[i])
+            else:
+                X = X @ self.W[i] + self.B[i]
+        return X
