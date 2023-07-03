@@ -3,6 +3,41 @@
 ## Introduction
 This is a Python implementation of a neural network model from scratch. The model allows you to train a neural network using provided input data (X) and corresponding output data (Y). It supports customizable parameters such as the number of hidden layers, learning rate, activation functions, epochs, and more. This documentation provides an overview of the model's usage and the available options.
 
+## Maths
+
+- $X$ - Input
+- $Y$ - Output
+- $W$ - Weights
+- $B$ - Biases
+
+Forward Propagation:
+
+$$
+\begin{matrix}
+Z_1 = f(X \cdot W_1 + B_1) \\
+Z_2 = f(Z_1 \cdot W_2 + B_2) \\ 
+\vdots \\
+Z_n = f(Z_{n-1} \cdot W_n + B_n)
+\end{matrix}
+$$
+
+```python
+def forward(X, W, B):
+    for i in range(len(W)):
+        X = activation_function(X @ W[i] + B[i]))
+    return X
+```
+
+Grad:
+$$\triangle w = \frac{loss(w+h) - loss(w-h)}{2h}$$
+
+$$w \leftarrow w - lr. \triangle w$$
+
+```python
+gradient = (self.MSE(Y, f1) - self.MSE(Y, f2)) / (2 * h)
+W[wt][wti][wtj] -= lr * gradient
+```
+
 ## Getting Started
 ### Prerequisites
 - Python 3.x
