@@ -13,3 +13,4 @@
 7. TSF Linear Regression
 8. Twitter Sentiment Analysis
 9. Netflix Movies and TV Shows
+10. Neural Network (from scratch)
