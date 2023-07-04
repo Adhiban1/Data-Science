@@ -1,7 +1,7 @@
 # Neural Network in Rust (From Scratch)
 
 ## Introduction
-This is a Python implementation of a neural network model from scratch. The model allows you to train a neural network using provided input data (X) and corresponding output data (Y). It supports customizable parameters such as the number of hidden layers, learning rate, epochs, and more. This documentation provides an overview of the model's usage and the available options.
+This is a Rust implementation of a neural network model from scratch. The model allows you to train a neural network using provided input data (X) and corresponding output data (Y). It supports customizable parameters such as the number of hidden layers, learning rate, epochs, and more. This documentation provides an overview of the model's usage and the available options.
 
 ## Maths
 
