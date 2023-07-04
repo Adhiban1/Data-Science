@@ -1,3 +1,4 @@
+use std::io::Write;
 use crate::matrix::{rand_matrix, dot, rand_vec, add_arr2_arr1, mse};
 
 #[allow(unused)]
@@ -94,9 +95,12 @@ impl NN {
     pub fn backpropagation(&mut self, h:f32, lr:f32, epochs:usize) -> Vec<f32> {
         let mut loss_history = vec![];
         loss_history.push(mse(&self.y, &self.forward()));
-        for _ in 0..epochs {
+        for e in 0..epochs {
             (self.w, self.b) = self.grad(h, lr);
-            loss_history.push(mse(&self.y, &self.forward()));
+            let l = mse(&self.y, &self.forward());
+            loss_history.push(l);
+            print!("\rEpoch: {:4} ({}%), Loss: {:.5} ({:.2}%)  ", e+1, (e+1)*100/epochs, l, (l-loss_history[0])*100.0/loss_history[0]);
+            std::io::stdout().flush().unwrap();
         }
         println!("\nInitial Loss: {}\nFinal Loss: {}\n", 
         loss_history[0], 

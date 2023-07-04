@@ -1,5 +1,4 @@
 import numpy as np
-from tqdm import tqdm
 
 class NN:
     def __init__(self, X, Y, hidden_layers, randstate=None):
@@ -81,9 +80,11 @@ class NN:
         self.activation = True
         loss_history = []
         loss_history.append(self.MSE(self.Y, self.forward(self.X, self.W, self.B, activation)))
-        for _ in tqdm(range(epochs)):
+        for e in range(epochs):
             self.W, self.B = self.grad(self.Y, self.X, self.W, self.B, h, lr, activation)
-            loss_history.append(self.MSE(self.Y, self.forward(self.X, self.W, self.B, activation)))
+            l = self.MSE(self.Y, self.forward(self.X, self.W, self.B, activation))
+            loss_history.append(l)
+            print("\rEpoch: {:>4} ({}%), Loss: {:.5f} ({:.2f}%)  ".format(e+1, (e+1)*100/epochs, l, (l-loss_history[0])*100.0/loss_history[0]), end='', flush=True)
         print(
             f"\nInitial Loss: {loss_history[0]}\nFinal Loss: {loss_history[-1]}\nMin Loss: {min(loss_history)}\n"
         )
